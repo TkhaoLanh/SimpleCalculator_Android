@@ -70,7 +70,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         clearBtn.setOnClickListener(this);
         buttonAdvance.setOnClickListener(this);
 
-
         // Retrieve the calculation history from the MyApp application context
         MyApp myApp = (MyApp) getApplication();
         String history = myApp.getCalculationHistory();
@@ -90,9 +89,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 int calculatedResult = calculator.calculate();
 
                 if(calculatedResult ==222){
+                    //clear the list
+                    calculator.clear();
+                    //clear result text view
+                    resultTextView.setText("");
                     //show error message
                     Toast.makeText(this,"Calculation error: Division by zero",Toast.LENGTH_SHORT).show();
                 }else if(calculatedResult ==111){
+                    //clear the list
+                    calculator.clear();
+                    //clear result text view
+                    resultTextView.setText("");
                     //show invalid input message
                     Toast.makeText(this, "Invalid input: All operands must have one digit only", Toast.LENGTH_SHORT).show();
                 }else if(calculatedResult ==333){
@@ -109,7 +116,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     if(calculator.isAdvanceMode()){
                         displayCalculationHistory();
-
                     }
                 }
 
@@ -136,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 historyTextView.setVisibility(View.INVISIBLE);
                 historyTextView.setText("");
                 resultTextView.setText("");
-               // calculator.clear();
+                calculator.clear();
                 break;
             default:
                     //If this is a single digit, push it to the textview
