@@ -21,3 +21,7 @@ Calculator app is a special version of a standard calculator with some extra fea
 • When the user click on that button, its title must be changed to be "Standard No History"
 • After each calculation, and when the user click on "=" button, the new operator inserted in the history text.
 • If the user return to standard version, the history text must disappear.
+
+## Prerequisites
+- Android
+- Java
